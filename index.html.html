@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Microsoft Global Hackathon 2026</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: "Segoe UI", sans-serif;
+            background: linear-gradient(-45deg, #0078D4, #00A4EF, #50E6FF, #005A9E);
+            background-size: 400% 400%;
+            animation: gradientBG 10s ease infinite;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        @keyframes gradientBG {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        .container {
+            width: 420px;
+            backdrop-filter: blur(15px);
+            background: rgba(255, 255, 255, 0.9);
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            animation: fadeIn 0.6s ease;
+        }
+
+        h2 {
+            text-align: center;
+            color: #0078D4;
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-top: 10px;
+            font-size: 14px;
+        }
+
+        input,
+        textarea,
+        select {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+        }
+
+        button {
+            margin-top: 15px;
+            width: 100%;
+            padding: 12px;
+            background: #0078D4;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background: #005a9e;
+        }
+
+        #loader {
+            display: none;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .spinner {
+            border: 4px solid #eee;
+            border-top: 4px solid #0078D4;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            margin: auto;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        #result {
+            display: none;
+            text-align: center;
+            font-size: 26px;
+            color: #107C10;
+            margin-top: 20px;
+            font-weight: bold;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container" id="formBox">
+        <h2>Microsoft Global Hackathon 2026</h2>
+
+        <label>Full Name</label>
+        <input type="text">
+
+        <label>Email Address</label>
+        <input type="email">
+
+        <label>Phone Number</label>
+        <input type="text">
+
+        <label>Country / Location</label>
+        <input type="text">
+
+        <label>Area of Interest</label>
+        <select>
+            <option>Artificial Intelligence</option>
+            <option>Cloud Computing</option>
+            <option>Cybersecurity</option>
+            <option>Web / App Development</option>
+        </select>
+
+        <label>Idea Description</label>
+        <textarea rows="3"></textarea>
+
+        <button onclick="submitForm()">Submit Application</button>
+
+        <div id="loader">
+            <div class="spinner"></div>
+            <p>Submitting your application...</p>
+        </div>
+
+        <div id="result">
+            🎉 Congratulations, April Fool! 😄
+        </div>
+    </div>
+
+    <script>
+        function submitForm() {
+            document.getElementById("loader").style.display = "block";
+
+            setTimeout(() => {
+                document.getElementById("loader").style.display = "none";
+                document.getElementById("result").style.display = "block";
+            }, 2500);
+        }
+    </script>
+
+</body>
+
+</html>
